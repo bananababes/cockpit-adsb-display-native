@@ -8,11 +8,19 @@ Replaces the original web-based (Node.js/Leaflet/Chromium kiosk) version of this
 
 ## Hardware
 
-- Raspberry Pi 5 (4GB+, recommended) or Raspberry Pi 3B (supported, slower rendering)
-- Stratux ADS-B receiver (dual SDR: RTL2838 for 1090MHz ES, Stratux UATRadio for 978MHz UAT)
-- VK-162 u-blox 7 USB GPS (or equivalent NMEA GPS handled by Stratux)
-- WiseCoco 2.8" round 480×480 HDMI touchscreen (or similar round HDMI touch panel)
+- Raspberry Pi 5 (4GB, recommended — very good results) or Raspberry Pi 3B (tested, works but laggy rendering)
+- Stratux ADS-B receiver SDRs (dual SDR: RTL2838 for 1090MHz ES, Stratux UATRadio for 978MHz UAT)
+- Stratux remote GPS module
+- WiseCoco (or other) 2.8" round 480×480 HDMI touchscreen
+- 30mm cooling fans (×2)
 - Official Pi 5 power supply (5V/5A USB-C) — underpowering causes instability with dual SDRs attached
+- USB-A male and female breakout boards
+- USB-C female breakout board
+- Micro USB male port, straight solder jack
+- 20-pin mini HDMI flat male connector, for ribbon cable
+- 20-pin micro HDMI flat male 90° up-angled connector, for ribbon cable
+- USB-C male vertical board, 16-pin data band PCB
+- 0.3mm pitch, 0.5mm 20-pin flexible ribbon flat cable, 0.1m
 
 ---
 
