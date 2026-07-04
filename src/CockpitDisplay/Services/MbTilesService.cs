@@ -44,7 +44,6 @@ public class MbTilesService : IDisposable
             if (tacTile != null)
                 return tacTile;
         }
-
         string? path = MapPageInfo.TilePath(page);
         if (path == null) return null;
         return GetTile(path, z, x, y);
