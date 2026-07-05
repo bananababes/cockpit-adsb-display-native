@@ -173,7 +173,10 @@ public class StratuxService : IDisposable
     // Mirrors the ws.on('message') handler in app.js connectTraffic()
     private void HandleTraffic(string json)
     {
-        Console.Error.WriteLine($"[Stratux] RAW traffic message: {json.Substring(0, Math.Min(200, json.Length))}");
+        // Debug logging — uncomment when diagnosing traffic reception issues.
+        // Left disabled in production: it writes to the journal on every traffic
+        // message, which is constant SD-card wear in busy airspace.
+        // Console.Error.WriteLine($"[Stratux] RAW traffic message: {json.Substring(0, Math.Min(200, json.Length))}");
         var t = JsonSerializer.Deserialize<TrafficMessage>(json);
         if (t == null || t.Icao_addr == 0) return;
 
@@ -206,7 +209,7 @@ public class StratuxService : IDisposable
                 OnGround      = t.OnGround,
                 PositionValid = t.Position_valid,
             };
-            Console.Error.WriteLine($"[Stratux] Traffic added: {callsign} at {t.Lat},{t.Lng} alt={t.Alt}");
+            // Console.Error.WriteLine($"[Stratux] Traffic added: {callsign} at {t.Lat},{t.Lng} alt={t.Alt}");
         }
     }
 
